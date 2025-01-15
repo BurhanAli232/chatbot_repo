@@ -1,0 +1,92 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:background="@color/white"
+    android:padding="16dp">
+    <ImageView
+        android:id="@+id/ivLogo"
+        android:layout_width="2700dp"
+        android:layout_height="270dp"
+        android:layout_marginTop="40dp"
+        android:src="@drawable/burhan"
+        android:contentDescription="App Logo"
+        android:layout_gravity="center_horizontal"
+        android:layout_marginBottom="16dp" />
+
+    <EditText
+        android:id="@+id/etFirstName"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="First Name"
+        android:divider="#1877F2"
+        android:textColor="@color/black"
+        android:background="@drawable/custom_edittext"
+        android:inputType="textPersonName"
+        android:textColorHint="@color/black"
+        android:layout_marginTop="16dp"
+        android:padding="10dp" />
+
+    <EditText
+        android:id="@+id/etLastName"
+        android:textColor="@color/black"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="Last Name"
+        android:textColorHint="@color/black"
+        android:background="@drawable/custom_edittext"
+        android:inputType="textPersonName"
+        android:layout_marginTop="16dp"
+        android:padding="10dp" />
+
+    <!-- Phone Number Input -->
+    <EditText
+        android:id="@+id/etPhone"
+        android:textColor="@color/black"
+        android:layout_width="match_parent"
+        android:textColorHint="@color/black"
+        android:layout_height="wrap_content"
+        android:hint="Phone Number"
+        android:inputType="phone"
+        android:background="@drawable/custom_edittext"
+        android:layout_marginTop="16dp"
+        android:padding="10dp" />
+
+    <!-- Date of Birth Input -->
+    <EditText
+        android:id="@+id/etDOB"
+        android:textColor="@color/black"
+        android:textColorHint="@color/black"
+        android:layout_width="match_parent"
+        android:divider="#1877F2"
+        android:layout_height="wrap_content"
+        android:hint="Date of Birth (dd/mm/yyyy)"
+        android:inputType="date"
+        android:background="@drawable/custom_edittext"
+        android:layout_marginTop="16dp"
+        android:padding="10dp" />
+
+    <!-- Email Input -->
+    <EditText
+        android:id="@+id/etEmail"
+        android:textColor="@color/black"
+        android:textColorHint="@color/black"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="Email"
+        android:background="@drawable/custom_edittext"
+        android:inputType="textEmailAddress"
+        android:layout_marginTop="16dp"
+        android:padding="10dp" />
+
+    <Button
+        android:id="@+id/btnSave"
+        android:text="Save"
+        android:padding="12dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:backgroundTint="#1877F2"
+        android:textColor="@color/white"
+        android:layout_marginTop="16dp"/>
+</LinearLayout>

@@ -1,0 +1,77 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="horizontal"
+    android:padding="8dp"
+    android:background="?android:attr/selectableItemBackground">
+
+    <TextView
+        android:id="@+id/tvTyping"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Typing..."
+        android:textSize="16sp"
+        android:textColor="@color/black"
+        android:visibility="gone" />
+
+
+    <!-- Message container with background and padding -->
+    <LinearLayout
+        android:id="@+id/msgContainer"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:padding="8dp"
+        android:gravity="center_vertical"
+        android:layout_gravity="start|end">
+
+        <!-- Person Image (User's image) -->
+        <ImageView
+            android:id="@+id/senderImage"
+            android:layout_width="40dp"
+            android:layout_height="40dp"
+            android:layout_gravity="center_vertical"
+            android:src="@drawable/person"
+            android:contentDescription="Sender Image"
+            android:layout_marginEnd="8dp" />
+
+        <!-- Robot Icon (Bot's image) -->
+        <ImageView
+            android:id="@+id/robotImage"
+            android:layout_width="40dp"
+            android:layout_height="40dp"
+            android:layout_gravity="center_vertical"
+            android:src="@drawable/chat"
+            android:contentDescription="Robot Image"
+            android:visibility="gone"
+            android:layout_marginEnd="8dp" />
+
+        <!-- Sender's Name -->
+        <TextView
+            android:id="@+id/tvSender"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Sender"
+            android:textStyle="bold"
+            android:layout_marginEnd="8dp"
+            android:layout_gravity="center_vertical" />
+
+        <!-- Message Text -->
+        <TextView
+            android:id="@+id/tvMessage"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Message"
+            android:layout_gravity="center_vertical" />
+
+        <!-- Loading dots for bot -->
+        <TextView
+            android:id="@+id/tvBotLoading"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="..."
+            android:textSize="24sp"
+            android:layout_gravity="center_vertical"
+            android:visibility="gone" />  <!-- Initially hidden -->
+    </LinearLayout>
+</LinearLayout>

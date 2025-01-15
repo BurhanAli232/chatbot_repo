@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:background="@color/white"
+    android:padding="16dp"
+    android:gravity="center_horizontal"
+    android:weightSum="1">
+
+    <!-- Logo Image -->
+    <ImageView
+        android:id="@+id/ivLogo"
+        android:layout_width="300dp"
+        android:layout_height="300dp"
+        android:layout_marginTop="100dp"
+        android:src="@drawable/burhan"
+        android:contentDescription="App Logo"
+        android:layout_gravity="center_horizontal"
+        android:layout_marginBottom="24dp" />
+
+    <!-- Manage Users Button -->
+    <Button
+        android:id="@+id/btnManageUsers"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Manage Users"
+        android:padding="12dp"
+        android:layout_marginBottom="16dp"
+        android:backgroundTint="#1877F2"
+        android:textColor="@android:color/white" />
+
+    <!-- View Reports Button -->
+    <Button
+        android:id="@+id/btnViewReports"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="View Reports"
+        android:padding="12dp"
+        android:layout_marginBottom="16dp"
+        android:backgroundTint="#1877F2"
+        android:textColor="@android:color/white" />
+
+    <!-- Logout Button -->
+    <Button
+        android:id="@+id/btnLogout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Logout"
+        android:padding="12dp"
+        android:layout_marginBottom="16dp"
+        android:backgroundTint="#FF5733"
+        android:textColor="@android:color/white" />
+</LinearLayout>

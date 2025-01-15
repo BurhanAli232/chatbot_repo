@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="horizontal"
+    android:gravity="end"
+    android:padding="8dp">
+
+    <!-- User message -->
+    <TextView
+        android:id="@+id/tvMessage"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:background="@drawable/user_message_box"
+        android:padding="10dp"
+        android:textColor="@color/white"
+        android:textSize="16sp" />
+
+    <!-- User icon -->
+    <ImageView
+        android:id="@+id/userIcon"
+        android:layout_width="35dp"
+        android:layout_height="35dp"
+        android:src="@drawable/person"
+        android:layout_marginStart="8dp"
+        android:layout_marginEnd="8dp"
+        android:contentDescription="User Icon" />
+</LinearLayout>

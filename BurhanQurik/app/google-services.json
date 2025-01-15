@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "159487132897",
+    "project_id": "burhanqurickbot",
+    "storage_bucket": "burhanqurickbot.firebasestorage.app"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:159487132897:android:04b915754c561b94e023a0",
+        "android_client_info": {
+          "package_name": "com.example.burhanqurickbot"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAOeuzGE0NmK7XJ4XRVeXMS8A8mXTyzC30"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

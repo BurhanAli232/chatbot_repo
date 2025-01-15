@@ -1,0 +1,157 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:padding="16dp"
+    android:background="#E0FFFF"
+    tools:context=".SignupActivity">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:gravity="center"
+        android:background="@color/white"
+        android:padding="24dp">
+
+        <!-- App Logo -->
+        <ImageView
+            android:id="@+id/ivLogo"
+            android:layout_width="170dp"
+            android:layout_height="170dp"
+            android:src="@drawable/burhan"
+            android:contentDescription="App Logo"
+            android:layout_gravity="center_horizontal"
+            android:layout_marginBottom="16dp" />
+
+        <!-- Title -->
+        <TextView
+            android:id="@+id/tvTitle"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Log in"
+            android:textSize="40dp"
+            android:textStyle="bold"
+            android:textColor="@android:color/black"
+            android:layout_gravity="center_horizontal"
+            android:layout_marginBottom="12dp" />
+
+        <!-- Email EditText -->
+        <EditText
+            android:id="@+id/etEmail"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="Email"
+            android:inputType="textEmailAddress"
+            android:padding="12dp"
+            android:textColor="@color/black"
+            android:background="@drawable/custom_edittext"
+            android:layout_marginTop="50dp"
+            android:textColorHint="@color/black"
+            tools:ignore="Autofill,HardcodedText" />
+
+        <!-- Password EditText -->
+        <EditText
+            android:id="@+id/etPassword"
+            android:layout_width="match_parent"
+            android:textColorHint="@color/black"
+            android:layout_height="wrap_content"
+            android:hint="Password"
+            android:textColor="@color/black"
+            android:background="@drawable/custom_edittext"
+            android:inputType="textPassword"
+            android:padding="12dp"
+            android:layout_marginTop="16dp"
+            tools:ignore="Autofill,HardcodedText" />
+
+        <!-- Sign Up Button -->
+        <Button
+            android:id="@+id/btnlogin"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Log in"
+            android:backgroundTint="#1877F2"
+            android:layout_marginTop="20dp"
+            android:textColor="@color/white"
+            tools:ignore="HardcodedText" />
+
+        <!-- Go to Login Button -->
+        <Button
+            android:id="@+id/btnGoToSignup"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Sign up"
+            android:layout_gravity="center"
+            android:backgroundTint="#1877F2"
+            android:layout_below="@id/btnlogin"
+            android:textColor="@color/white"
+            android:layout_marginTop="1dp"
+            android:layout_centerHorizontal="true"/>
+        <!--Social media i-con-->
+        <!-- Social Media Icons Section -->
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Follow for more update"
+            android:textColor="#1877F2"
+            android:layout_gravity="center_horizontal"
+            android:layout_marginBottom="8dp" />
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:gravity="center"
+            android:layout_marginBottom="24dp">
+
+            <!-- Facebook Icon -->
+            <ImageView
+                android:id="@+id/openFacebookProfile1"
+                android:layout_width="40dp"
+                android:layout_height="40dp"
+                android:src="@drawable/facebook"
+                android:contentDescription="Facebook"
+                android:layout_margin="8dp"
+                android:clickable="true"
+                android:focusable="true"
+                android:onClick="openFacebookProfile" />
+
+            <!-- Add WebView for fallback -->
+            <WebView
+                android:id="@+id/facebookWebView"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:visibility="gone"
+                tools:ignore="WebViewLayout" />
+
+
+
+            <!-- Google Icon -->
+            <ImageView
+                android:id="@+id/LinkedinProfile"
+                android:layout_width="40dp"
+                android:layout_height="40dp"
+                android:src="@drawable/linkedin"
+                android:contentDescription="Google"
+                android:layout_margin="8dp"
+                android:clickable="true"
+                android:focusable="true"
+                android:onClick="openLinkedInProfile"/>
+
+            <!-- Twitter Icon -->
+            <ImageView
+                android:id="@+id/TwitterProfile"
+                android:layout_width="40dp"
+                android:layout_height="40dp"
+                android:src="@drawable/twitter"
+                android:contentDescription="Twitter"
+                android:layout_margin="8dp"
+                android:clickable="true"
+                android:focusable="true"
+                android:onClick="openTwitterProfile"/>
+        </LinearLayout>
+
+
+    </LinearLayout>
+
+</RelativeLayout>

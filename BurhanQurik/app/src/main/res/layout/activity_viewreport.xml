@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:padding="16dp"
+    android:textColor="#000000"
+    android:background="@android:color/white">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:padding="16dp">
+
+        <ImageView
+            android:id="@+id/ivLogo"
+            android:layout_width="300dp"
+            android:layout_height="300dp"
+            android:layout_marginTop="55dp"
+            android:src="@drawable/burhan"
+            android:contentDescription="App Logo"
+            android:layout_gravity="center_horizontal"
+            android:layout_marginBottom="16dp" />
+
+        <EditText
+            android:id="@+id/etEmail"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="Enter Email"
+            android:textColor="@color/black"
+            android:inputType="textEmailAddress"
+            android:padding="12dp"
+            android:textColorHint="@android:color/black"
+            android:layout_marginBottom="16dp" />
+
+        <Button
+            android:id="@+id/btnSearch"
+            android:text="Search"
+            android:layout_width="match_parent"
+            android:textColor="@color/white"
+            android:layout_height="wrap_content"
+            android:backgroundTint="#1877F2"
+            android:padding="12dp" />
+
+        <ListView
+            android:id="@+id/listViewResults"
+            android:layout_width="match_parent"
+            android:divider="#1877F2"
+            android:layout_height="wrap_content" />
+
+    </LinearLayout>
+
+</ScrollView>

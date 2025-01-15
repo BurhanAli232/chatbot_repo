@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <item name="btnManageUsers" type="id" />
+    <item name="btnViewReports" type="id" />
+    <item name="btnLogout" type="id" />
+</resources>

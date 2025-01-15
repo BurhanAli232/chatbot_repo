@@ -1,0 +1,203 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:background="#E0FFFF"
+        android:padding="16dp">
+
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:gravity="center"
+            android:background="@color/white"
+            android:padding="24dp">
+
+            <!-- App Logo -->
+            <ImageView
+                android:id="@+id/ivLogo"
+                android:layout_width="170dp"
+                android:layout_height="170dp"
+                android:src="@drawable/burhan"
+                android:contentDescription="App Logo"
+                android:layout_gravity="center_horizontal"
+                android:layout_marginBottom="16dp" />
+
+            <!-- Title -->
+            <TextView
+                android:id="@+id/tvTitle"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Sign Up"
+                android:textSize="40sp"
+                android:textStyle="bold"
+                android:textColor="@android:color/black"
+                android:layout_gravity="center_horizontal"
+                android:layout_marginBottom="16dp" />
+
+            <!-- First Name Input -->
+            <EditText
+                android:id="@+id/etFirstName"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="First Name"
+                android:background="@drawable/custom_edittext"
+                android:inputType="textPersonName"
+                android:textColorHint="@color/black"
+                android:layout_marginTop="16dp"
+                android:padding="10dp" />
+
+            <!-- Last Name Input -->
+            <EditText
+                android:id="@+id/etLastName"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="Last Name"
+                android:textColorHint="@color/black"
+                android:background="@drawable/custom_edittext"
+                android:inputType="textPersonName"
+                android:layout_marginTop="16dp"
+                android:padding="10dp" />
+
+            <!-- Phone Number Input -->
+            <EditText
+                android:id="@+id/etPhoneNumber"
+                android:layout_width="match_parent"
+                android:textColorHint="@color/black"
+                android:layout_height="wrap_content"
+                android:hint="Phone Number"
+                android:inputType="phone"
+                android:background="@drawable/custom_edittext"
+                android:layout_marginTop="16dp"
+                android:padding="10dp" />
+
+            <!-- Date of Birth Input -->
+            <EditText
+                android:id="@+id/etDOB"
+                android:textColorHint="@color/black"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="Date of Birth (dd/mm/yyyy)"
+                android:inputType="date"
+                android:background="@drawable/custom_edittext"
+                android:layout_marginTop="16dp"
+                android:padding="10dp" />
+
+            <!-- Email Input -->
+            <EditText
+                android:id="@+id/etEmail"
+                android:textColorHint="@color/black"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="Email"
+                android:background="@drawable/custom_edittext"
+                android:inputType="textEmailAddress"
+                android:layout_marginTop="16dp"
+                android:padding="10dp" />
+
+            <!-- Password Input -->
+            <EditText
+                android:id="@+id/etPassword"
+                android:textColorHint="@color/black"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="Password"
+                android:background="@drawable/custom_edittext"
+                android:inputType="textPassword"
+                android:layout_marginTop="16dp"
+                android:padding="10dp" />
+
+            <!-- Confirm Password Input -->
+            <EditText
+                android:id="@+id/etConfirmPassword"
+                android:textColorHint="@color/black"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="Confirm Password"
+                android:inputType="textPassword"
+                android:layout_marginTop="16dp"
+                android:background="@drawable/custom_edittext"
+                android:padding="10dp" />
+
+            <!-- Go to Login Link -->
+            <TextView
+                android:id="@+id/tvLogin"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Already have an account? Login"
+                android:textColor="@android:color/holo_blue_dark"
+                android:layout_marginTop="16dp"
+                android:clickable="true"
+                android:focusable="true"
+                android:onClick="goToLogin" />
+
+            <!-- Social Media Icons Section -->
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Follow for more updates"
+                android:textColor="@android:color/black"
+                android:layout_gravity="center_horizontal"
+                android:layout_marginBottom="8dp" />
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:gravity="center"
+                android:layout_marginBottom="24dp">
+
+                <!-- Facebook Icon -->
+                <ImageView
+                    android:id="@+id/facebookIcon"
+                    android:layout_width="40dp"
+                    android:layout_height="40dp"
+                    android:src="@drawable/facebook"
+                    android:contentDescription="Facebook"
+                    android:layout_margin="8dp"
+                    android:clickable="true"
+                    android:focusable="true"
+                    android:onClick="openFacebookProfile" />
+
+                <!-- Google Icon -->
+                <ImageView
+                    android:id="@+id/LinkedinProfile"
+                    android:layout_width="40dp"
+                    android:layout_height="40dp"
+                    android:src="@drawable/linkedin"
+                    android:contentDescription="Google"
+                    android:layout_margin="8dp"
+                    android:clickable="true"
+                    android:focusable="true"
+                    android:onClick="openLinkedInProfile"/>
+
+                <!-- Twitter Icon -->
+                <ImageView
+                    android:id="@+id/TwitterProfie"
+                    android:layout_width="40dp"
+                    android:layout_height="40dp"
+                    android:src="@drawable/twitter"
+                    android:contentDescription="Twitter"
+                    android:layout_margin="8dp"
+                    android:clickable="true"
+                    android:focusable="true"
+                    android:onClick="opentwitterProfile"/>
+            </LinearLayout>
+
+            <!-- Sign Up Button -->
+            <Button
+                android:id="@+id/btnSignUp"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:backgroundTint="#1877F2"
+                android:text="Sign Up"
+                android:layout_marginTop="24dp"
+                android:textColor="@android:color/white" />
+        </LinearLayout>
+    </LinearLayout>
+</ScrollView>
