@@ -1,0 +1,533 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>BurgerBliss | Delicious Burgers & Fast Food</title>
+    
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+        
+        body {
+            background-color: #f9f9f9;
+            color: #333;
+        }
+        
+        header {
+            background-color: #fff;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+            position: fixed;
+            width: 100%;
+            z-index: 100;
+        }
+        
+        .navbar {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 1rem 5%;
+            max-width: 1400px;
+            margin: 0 auto;
+        }
+        
+        .logo {
+            font-size: 1.8rem;
+            font-weight: bold;
+            color: #e63946;
+        }
+        
+        .logo span {
+            color: #457b9d;
+        }
+        
+        .nav-links {
+            display: flex;
+            list-style: none;
+        }
+        
+        .nav-links li {
+            margin-left: 2rem;
+        }
+        
+        .nav-links a {
+            text-decoration: none;
+            color: #333;
+            font-weight: 500;
+            transition: color 0.3s;
+        }
+        
+        .nav-links a:hover {
+            color: #e63946;
+        }
+        
+        .order-btn {
+            background-color: #e63946;
+            color: white;
+            border: none;
+            padding: 0.7rem 1.5rem;
+            border-radius: 50px;
+            font-weight: bold;
+            cursor: pointer;
+            transition: background-color 0.3s;
+        }
+        
+        .order-btn:hover {
+            background-color: #d62839;
+        }
+        
+        .hero {
+            height: 100vh;
+            display: flex;
+            align-items: center;
+            background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url('/api/placeholder/1200/800') center/cover;
+            color: white;
+            padding-top: 70px;
+        }
+        
+        .hero-content {
+            max-width: 1400px;
+            margin: 0 auto;
+            padding: 0 5%;
+        }
+        
+        .hero h1 {
+            font-size: 3.5rem;
+            margin-bottom: 1rem;
+        }
+        
+        .hero p {
+            font-size: 1.2rem;
+            margin-bottom: 2rem;
+            max-width: 600px;
+        }
+        
+        .featured {
+            padding: 5rem 5%;
+            max-width: 1400px;
+            margin: 0 auto;
+        }
+        
+        .section-title {
+            text-align: center;
+            font-size: 2.5rem;
+            margin-bottom: 3rem;
+            color: #333;
+        }
+        
+        .burger-cards {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+        }
+        
+        .burger-card {
+            background-color: white;
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s;
+        }
+        
+        .burger-card:hover {
+            transform: translateY(-10px);
+        }
+        
+        .burger-img {
+            height: 200px;
+            width: 100%;
+            object-fit: cover;
+        }
+        
+        .burger-info {
+            padding: 1.5rem;
+        }
+        
+        .burger-info h3 {
+            font-size: 1.5rem;
+            margin-bottom: 0.5rem;
+        }
+        
+        .burger-price {
+            color: #e63946;
+            font-weight: bold;
+            font-size: 1.2rem;
+            margin-bottom: 1rem;
+        }
+        
+        .add-to-cart {
+            background-color: #457b9d;
+            color: white;
+            border: none;
+            padding: 0.7rem 1rem;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background-color 0.3s;
+        }
+        
+        .add-to-cart:hover {
+            background-color: #1d3557;
+        }
+        
+        .about {
+            background-color: #f1faee;
+            padding: 5rem 5%;
+        }
+        
+        .about-content {
+            max-width: 1400px;
+            margin: 0 auto;
+            display: flex;
+            align-items: center;
+            gap: 3rem;
+        }
+        
+        .about-text {
+            flex: 1;
+        }
+        
+        .about-img {
+            flex: 1;
+            border-radius: 10px;
+            overflow: hidden;
+        }
+        
+        .about-img img {
+            width: 100%;
+            height: auto;
+            display: block;
+        }
+        
+        .testimonials {
+            padding: 5rem 5%;
+            max-width: 1400px;
+            margin: 0 auto;
+        }
+        
+        .testimonial-cards {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+        }
+        
+        .testimonial-card {
+            background-color: white;
+            border-radius: 10px;
+            padding: 2rem;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+        }
+        
+        .testimonial-text {
+            font-style: italic;
+            margin-bottom: 1rem;
+        }
+        
+        .testimonial-author {
+            font-weight: bold;
+        }
+        
+        .cta {
+            background-color: #e63946;
+            color: white;
+            padding: 5rem 5%;
+            text-align: center;
+        }
+        
+        .cta-content {
+            max-width: 800px;
+            margin: 0 auto;
+        }
+        
+        .cta h2 {
+            font-size: 2.5rem;
+            margin-bottom: 1rem;
+        }
+        
+        .cta p {
+            font-size: 1.2rem;
+            margin-bottom: 2rem;
+        }
+        
+        .cta-btn {
+            background-color: white;
+            color: #e63946;
+            border: none;
+            padding: 1rem 2rem;
+            border-radius: 50px;
+            font-weight: bold;
+            font-size: 1.1rem;
+            cursor: pointer;
+            transition: background-color 0.3s, color 0.3s;
+        }
+        
+        .cta-btn:hover {
+            background-color: #1d3557;
+            color: white;
+        }
+        
+        footer {
+            background-color: #1d3557;
+            color: white;
+            padding: 3rem 5%;
+        }
+        
+        .footer-content {
+            max-width: 1400px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 2rem;
+        }
+        
+        .footer-logo {
+            font-size: 1.5rem;
+            font-weight: bold;
+            margin-bottom: 1rem;
+        }
+        
+        .footer-logo span {
+            color: #a8dadc;
+        }
+        
+        .footer-links h4 {
+            font-size: 1.2rem;
+            margin-bottom: 1rem;
+        }
+        
+        .footer-links ul {
+            list-style: none;
+        }
+        
+        .footer-links li {
+            margin-bottom: 0.5rem;
+        }
+        
+        .footer-links a {
+            color: #a8dadc;
+            text-decoration: none;
+            transition: color 0.3s;
+        }
+        
+        .footer-links a:hover {
+            color: white;
+        }
+        
+        .social-icons {
+            display: flex;
+            gap: 1rem;
+            margin-top: 1rem;
+        }
+        
+        .social-icon {
+            background-color: #457b9d;
+            color: white;
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-decoration: none;
+            transition: background-color 0.3s;
+        }
+        
+        .social-icon:hover {
+            background-color: #e63946;
+        }
+        
+        .copyright {
+            margin-top: 3rem;
+            text-align: center;
+            padding-top: 1rem;
+            border-top: 1px solid #457b9d;
+            max-width: 1400px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+        
+        @media (max-width: 768px) {
+            .navbar {
+                flex-direction: column;
+                align-items: flex-start;
+            }
+            
+            .nav-links {
+                margin-top: 1rem;
+                flex-direction: column;
+                width: 100%;
+            }
+            
+            .nav-links li {
+                margin: 0.5rem 0;
+                margin-left: 0;
+            }
+            
+            .hero h1 {
+                font-size: 2.5rem;
+            }
+            
+            .about-content {
+                flex-direction: column;
+            }
+        }
+    </style>
+    <script src="https://www.gstatic.com/dialogflow-console/fast/messenger/bootstrap.js?v=1"></script>
+    <df-messenger
+      intent="WELCOME"
+      chat-title="Are-resturent-chatbot!"
+      agent-id="781e4fd8-e6fd-42c0-a0ea-1faebb7d5b55"
+      language-code="en"
+    ></df-messenger>
+</head>
+<body>
+    <header>
+        <nav class="navbar">
+            <div class="logo">Burger<span>Bliss</span></div>
+            <ul class="nav-links">
+                <li><a href="#home">Home</a></li>
+                <li><a href="#menu">Menu</a></li>
+                <li><a href="#about">About Us</a></li>
+                <li><a href="#contact">Contact</a></li>
+                <li><button class="order-btn">Order Now</button></li>
+            </ul>
+        </nav>
+    </header>
+
+    <section class="hero" id="home">
+        <div class="hero-content">
+            <h1>Mouthwatering Burgers, <br>Crafted to Perfection</h1>
+            <p>Using only the freshest ingredients and our secret recipes, we create burgers that will satisfy your cravings and keep you coming back for more.</p>
+            <button class="order-btn">Explore Our Menu</button>
+        </div>
+    </section>
+
+    <section class="featured" id="menu">
+        <h2 class="section-title">Featured Burgers</h2>
+        <div class="burger-cards">
+            <div class="burger-card">
+                <img src="/api/placeholder/400/300" alt="Classic Cheeseburger" class="burger-img">
+                <div class="burger-info">
+                    <h3>Classic Cheeseburger</h3>
+                    <p class="burger-price">$8.99</p>
+                    <p>Juicy beef patty with melted cheddar, fresh lettuce, tomato, and our special sauce.</p>
+                    <button class="add-to-cart">Add to Cart</button>
+                </div>
+            </div>
+            
+            <div class="burger-card">
+                <img src="/api/placeholder/400/300" alt="BBQ Bacon Burger" class="burger-img">
+                <div class="burger-info">
+                    <h3>BBQ Bacon Burger</h3>
+                    <p class="burger-price">$10.99</p>
+                    <p>Smoky BBQ sauce, crispy bacon, caramelized onions, and melted cheese.</p>
+                    <button class="add-to-cart">Add to Cart</button>
+                </div>
+            </div>
+            
+            <div class="burger-card">
+                <img src="/api/placeholder/400/300" alt="Veggie Supreme" class="burger-img">
+                <div class="burger-info">
+                    <h3>Veggie Supreme</h3>
+                    <p class="burger-price">$9.99</p>
+                    <p>Plant-based patty with avocado, roasted peppers, and our homemade herb sauce.</p>
+                    <button class="add-to-cart">Add to Cart</button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="about" id="about">
+        <div class="about-content">
+            <div class="about-text">
+                <h2 class="section-title">Our Story</h2>
+                <p>Founded in 2010, BurgerBliss started as a small food truck with a simple mission: create the most delicious burgers using only premium ingredients. Today, we've grown into a local favorite, but our commitment to quality remains unchanged.</p>
+                <p>Every burger is made to order, ensuring you get the freshest, most flavorful experience possible. We source our ingredients from local suppliers and make our sauces in-house daily.</p>
+                <button class="order-btn">Learn More</button>
+            </div>
+            <div class="about-img">
+                <img src="/api/placeholder/600/400" alt="BurgerBliss team">
+            </div>
+        </div>
+    </section>
+
+    <section class="testimonials">
+        <h2 class="section-title">What Our Customers Say</h2>
+        <div class="testimonial-cards">
+            <div class="testimonial-card">
+                <p class="testimonial-text">"BurgerBliss makes the best burgers in town! The classic cheeseburger is my weekly treat that I can't live without."</p>
+                <p class="testimonial-author">- Sarah Johnson</p>
+            </div>
+            
+            <div class="testimonial-card">
+                <p class="testimonial-text">"As a vegetarian, I'm often disappointed with burger options, but the Veggie Supreme is genuinely amazing. Flavorful and satisfying!"</p>
+                <p class="testimonial-author">- Michael Chen</p>
+            </div>
+            
+            <div class="testimonial-card">
+                <p class="testimonial-text">"Fast service, friendly staff, and burgers that taste like they're made with love. What more could you ask for?"</p>
+                <p class="testimonial-author">- Emily Rodriguez</p>
+            </div>
+        </div>
+    </section>
+
+    <section class="cta">
+        <div class="cta-content">
+            <h2>Hungry Yet? Order Now!</h2>
+            <p>Get your favorite burgers delivered straight to your door. Use code WELCOME10 for 10% off your first order.</p>
+            <button class="cta-btn">Place Your Order</button>
+        </div>
+    </section>
+
+    <footer id="contact">
+        <div class="footer-content">
+            <div class="footer-info">
+                <div class="footer-logo">Burger<span>Bliss</span></div>
+                <p>Serving mouthwatering burgers since 2010.</p>
+                <div class="social-icons">
+                    <a href="#" class="social-icon">f</a>
+                    <a href="#" class="social-icon">t</a>
+                    <a href="#" class="social-icon">in</a>
+                    <a href="#" class="social-icon">ig</a>
+                </div>
+            </div>
+            
+            <div class="footer-links">
+                <h4>Quick Links</h4>
+                <ul>
+                    <li><a href="#home">Home</a></li>
+                    <li><a href="#menu">Menu</a></li>
+                    <li><a href="#about">About Us</a></li>
+                    <li><a href="#contact">Contact</a></li>
+                </ul>
+            </div>
+            
+            <div class="footer-links">
+                <h4>Contact Us</h4>
+                <ul>
+                    <li>123 Burger Street</li>
+                    <li>Foodville, FB 12345</li>
+                    <li>Phone: (555) 123-4567</li>
+                    <li>Email: info@burgerbliss.com</li>
+                </ul>
+            </div>
+            
+            <div class="footer-links">
+                <h4>Opening Hours</h4>
+                <ul>
+                    <li>Monday - Thursday: 11am - 9pm</li>
+                    <li>Friday - Saturday: 11am - 11pm</li>
+                    <li>Sunday: 12pm - 8pm</li>
+                </ul>
+            </div>
+        </div>
+        
+        <div class="copyright">
+            <p>&copy; 2025 BurgerBliss. All rights reserved.</p>
+        </div>
+    </footer>
+</body>
+</html>
